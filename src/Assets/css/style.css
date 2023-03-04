@@ -11,7 +11,7 @@ ul {
 }
 .icon-options-vertical {
   display: block;
-  background: url(../img/toggle.png);
+  /* background: url(../img/toggle.png); */
   padding: 10px;
   width: 15px;
   height: 15px;
@@ -30,7 +30,7 @@ ul {
 }
 
 .profile-header {
-  background: url(../images/banner.png) no-repeat;
+  /* background: url(../images/banner.png) no-repeat; */
   background-size: cover;
   position: relative;
   background-position: top;
@@ -3221,7 +3221,7 @@ span.label-detail i {
   box-sizing: border-box;
 }
 .profile-bg {
-  background-image: url('../images/profile-bg-01.jpg');
+  /* background-image: url('../images/profile-bg-01.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

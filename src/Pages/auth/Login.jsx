@@ -1,28 +1,25 @@
 import React, {  useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Login = ({ history }) => {
   // const isLogin = useSelector((state) => state.auth.isAuthenticated);
   // if (isLogin) history.push('/app');
   const [showPassword, setShowPassword] = useState(false);
 
+  const onSubmitHandler= (event) =>{
+    event.preventDefault();
+    
+    // if (data){
+    //     // navigate('/app/dashboard')
+    //     <Redirect to="/app/dashboard" />
+    // }
+  }
   return (
     <>
       <div className="container pt-5">
         <div className="row mt--2">
           <div className="col-md-6 order2">
-            <div className="signup-text signup-left-box">
-              <h1>
-                Single bio link for <span>everything</span>
-              </h1>
-              <p>
-                Share and cross promote your important links with your followers and our directory
-                members.
-              </p>
-              <div className="login-img">
-                {/* <img src={images.login_sidebar} alt="" className="sign-img " /> */}
-              </div>
-            </div>
+           
           </div>
           <div className="col-md-6">
             <div className="card full-height ">
@@ -93,7 +90,7 @@ const Login = ({ history }) => {
                     <button
                       type="button"
                       className="btn btn-primary btn-block"
-                    //   onClick={(evt) => onSubmitHandler(evt)}
+                      onClick={(evt) => onSubmitHandler(evt)}
                     >
                       Submit
                     </button>

@@ -9,22 +9,22 @@ const routes = [
   //   // admin panel
   {
     path: "/app",
-    element: AppLayout,
+    component: AppLayout,
     isPrivate: true,
     checkLogin: false,
     title: "Dashboard",
     routes: [
       {
         path: "/app/dashboard/",
-        element: Dashboard,
+        component: Dashboard,
         title: "Payment",
       },
     ],
   },
 
   {
-    path: "/",
-    element: MainLayout,
+    path: "/auth/login",
+    component: MainLayout,
     exact: false,
     isPrivate: false,
     isAuthenticated: true,
@@ -32,7 +32,7 @@ const routes = [
     routes: [
       {
         path: "/auth/login",
-        element: Login,
+        component: Login,
         title: "Login",
       },
     ],

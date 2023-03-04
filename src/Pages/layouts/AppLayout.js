@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import RouteWithSubRoutes from "../../navigation/RouteWithSubRoutes";
 import Dashboard from "../app/dashboard/Dashboard";
 import NavBar from "../app/navbar/NavBar";
@@ -13,11 +13,11 @@ const AppLayout = ({ history, location, routes, match }) => {
         <NavBar />
         <SideBar />
         {match.path === "/app" && match.isExact && <Dashboard />}
-        <Routes>
+        <Switch>
           {routes.map((route, index) => (
             <RouteWithSubRoutes key={index} {...route} />
           ))}
-        </Routes>
+        </Switch>
       </div>
     </>
   );

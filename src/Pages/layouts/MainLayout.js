@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import RouteWithSubRoutes from "../../navigation/RouteWithSubRoutes";
 
@@ -25,11 +25,11 @@ const MainLayout = (props) => {
       >
         {props.match.path === "/" && props.match.isExact}
 
-        <Routes>
+        <Switch>
           {props.routes.map((route, index) => (
             <RouteWithSubRoutes key={index} {...route} />
           ))}
-        </Routes>
+        </Switch>
       </div>
       {showNavbarFooter}
     </>

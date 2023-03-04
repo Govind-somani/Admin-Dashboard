@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 import ScrollToTop from "../Components/ScrollToTop";
 import routes from "./routes";
@@ -11,12 +11,14 @@ const RootNavigator = () => {
   return (
     <Router>
       {/* <ScriptInjector /> */}
-      <ScrollToTop />
-      <Routes>
-        {routes.map((route, index) => (
-          <RouteWithSubRoutes key={index} {...route} />
-        ))}
-      </Routes>
+      {/* <ScrollToTop /> */}
+      <Switch>
+        {routes.map(
+          (route, index) => (
+            console.log(route), (<RouteWithSubRoutes key={index} {...route} />)
+          )
+        )}
+      </Switch>
     </Router>
   );
 };
