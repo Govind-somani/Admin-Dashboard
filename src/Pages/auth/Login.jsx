@@ -1,32 +1,41 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-
 const Login = ({ history }) => {
   // const isLogin = useSelector((state) => state.auth.isAuthenticated);
   // if (isLogin) history.push('/app');
   const [showPassword, setShowPassword] = useState(false);
+  const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
 
-  const onSubmitHandler= (event) =>{
-    event.preventDefault();
-    
-    // if (data){
-    //     // navigate('/app/dashboard')
-    //     <Redirect to="/app/dashboard" />
-    // }
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    if (userName && password) {
+      console.log(userName, password);
+      const data = {
+        userName: userName,
+        password: password
+      }
+      localStorage.setItem("auth", JSON.stringify(data));
+      setTimeout(() => {  
+        < Redirect to = "/app/dashboard" />
+      }, 1000)
+    }
+    else {
+      alert("please fill all the field")
+    }
   }
   return (
     <>
       <div className="container pt-5">
         <div className="row mt--2">
           <div className="col-md-6 order2">
-           
           </div>
           <div className="col-md-6">
             <div className="card full-height ">
               <div className="card-body">
                 <div className="signup-text text-center mb-5">
                   <h1>
-                    Sign in 
+                    Sign in
                   </h1>
                 </div>
                 <div className="form-signup">
@@ -38,8 +47,10 @@ const Login = ({ history }) => {
                       placeholder="Enter your email in here"
                       name="email"
                       autoComplete="off"
-                    //   value={form.email || ''}
-                    //   onChange={(evt) => inputChangeHandler(evt.target.name, evt.target.value)}
+                      value={userName}
+                      onChange={(e) => setUserName(e.target.value)}
+                      //   value={form.email || ''}
+                      //   onChange={(evt) => inputChangeHandler(evt.target.name, evt.target.value)}
                       required
                     />
                     {/* <label htmlFor="inputFloatingLabel1" className="placeholder">
@@ -71,8 +82,8 @@ const Login = ({ history }) => {
                       placeholder="Enter your password in here"
                       name="password"
                       autoComplete="off"
-                    //   value={form.password || ''}
-                    //   onChange={(evt) => inputChangeHandler(evt.target.name, evt.target.value)}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       required
                     />
                     {/* <label htmlFor="inputFloatingLabel2" className="placeholder">
@@ -90,12 +101,12 @@ const Login = ({ history }) => {
                     <button
                       type="button"
                       className="btn btn-primary btn-block"
-                      onClick={(evt) => onSubmitHandler(evt)}
+                      onClick={(e) => onSubmitHandler(e)}
                     >
                       Submit
                     </button>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
