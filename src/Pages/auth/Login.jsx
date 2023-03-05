@@ -21,7 +21,7 @@ const Login = ({ history }) => {
       }, 1000)
     }
     else {
-      alert("please fill all the field");
+      alert("please fill all the field")
     }
   }
   return (
